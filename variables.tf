@@ -11,23 +11,30 @@ variable "vpc_name" {
 
 variable "vpc_cidr" {
   type    = string
-  default = "10.2.0.0/24"
+  # default = "10.0.0.0/23" 
+  default = "10.2.0.0/23"
+  # default = "10.2.0.0/24"
 }
 
 variable "availability_zones" {
   type    = list(string)
-  # default = ["ap-northeast-1a", "ap-northeast-1c"]
-  default = ["ap-northeast-1a"]
+  # default = ["ap-northeast-1a", "ap-northeast-1c","ap-northeast-1d"]
+  default = ["ap-northeast-1a", "ap-northeast-1c"]
+  # default = ["ap-northeast-1a"]
 }
 
 variable "public_subnet_cidrs" {
   type    = list(string)
-  default = ["10.2.0.128/28"]
+  # default = ["10.0.1.128/28","10.0.1.144/28","10.0.1.160/28",]
+  default = ["10.2.1.0/28","10.2.1.16/28"]
+  # default = ["10.2.0.128/28"]
 }
 
 variable "private_subnet_cidrs" {
   type    = list(string)
-  default = ["10.2.0.0/25"]
+  # default = ["10.0.0.0/25","10.0.0.128/25","10.0.1.0/25"]
+  default = ["10.2.0.0/25","10.2.0.128/25"]
+  # default = ["10.2.0.0/25"]
 }
 
 variable "enable_nat_gateway" {
